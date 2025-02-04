@@ -5,6 +5,7 @@ import myselectshop.dto.ProductMypriceRequestDto;
 import myselectshop.dto.ProductRequestDto;
 import myselectshop.dto.ProductResponseDto;
 import myselectshop.entity.Product;
+import myselectshop.naver.dto.ItemDto;
 import myselectshop.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,5 +51,13 @@ public class ProductService {
         }
 
         return responseDtoList;
+    }
+
+    @Transactional
+    public void updateBySearch(Long id, ItemDto itemDto) {
+        Product product = productRepository.findById(id).orElseThrow(() ->
+                new NullPointerException("해당 상품은 존재하지 않습니다.")
+        );
+        product.updateByItemDto(itemDto);
     }
 }

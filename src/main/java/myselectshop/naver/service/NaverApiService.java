@@ -1,6 +1,7 @@
 package myselectshop.naver.service;
 
 
+import lombok.RequiredArgsConstructor;
 import myselectshop.naver.dto.ItemDto;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
@@ -23,14 +24,14 @@ public class NaverApiService {
 
     private final RestTemplate restTemplate;
 
-    @Value("${api.client.id}")
-    private  String clientId;
+    private final String clientId;
 
-    @Value("${api.client.secret}")
-    private String secretKey;
+    private final String secretKey;
 
-    public NaverApiService(RestTemplateBuilder builder) {
+    public NaverApiService(RestTemplateBuilder builder, @Value("${api.client.id}") String clientId, @Value("${api.client.secret}") String secretKey) {
         this.restTemplate = builder.build();
+        this.clientId = clientId;
+        this.secretKey = secretKey;
     }
 
     public List<ItemDto> searchItems(String query) {
