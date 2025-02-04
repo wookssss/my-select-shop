@@ -6,6 +6,7 @@ import myselectshop.dto.ProductRequestDto;
 import myselectshop.dto.ProductResponseDto;
 import myselectshop.security.UserDetailsImpl;
 import myselectshop.service.ProductService;
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,12 +30,14 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<ProductResponseDto> getProduct(@AuthenticationPrincipal UserDetailsImpl userDetails) {
-        return productService.getProducts(userDetails.getUser());
-    }
-
-    @GetMapping("/admin/products")
-    public List<ProductResponseDto> getAllProducts(){
-        return productService.getAllProducts();
+    public Page<ProductResponseDto> getProduct(
+            @RequestParam("page") int page,
+            @RequestParam("size") int size,
+            @RequestParam("sortBy") String sortBy,
+            @RequestParam("isAsc") boolean isAsc,
+            @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        return productService.getProducts(userDetails.getUser(),
+                page-1, size, sortBy, isAsc
+        );
     }
 }
