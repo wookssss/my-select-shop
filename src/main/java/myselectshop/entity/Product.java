@@ -41,6 +41,7 @@ public class Product extends Timestamped {
     @JoinColumn(name="user_id", nullable = false)
     private User user;
 
+    // Product에서 Folder를 조회할 수 있게 하기 위해 양방향 관계로 설정
     @OneToMany(mappedBy = "product")
     private List<ProductFolder> productFolderList = new ArrayList<>();
 
