@@ -4,12 +4,14 @@ import myselectshop.dto.SignupRequestDto;
 import myselectshop.dto.UserInfoDto;
 import myselectshop.entity.UserRoleEnum;
 import myselectshop.security.UserDetailsImpl;
+import myselectshop.service.FolderService;
 import myselectshop.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final FolderService folderService;
 
     @GetMapping("/user/login-page")
     public String loginPage() {
@@ -63,4 +66,11 @@ public class UserController {
 
         return new UserInfoDto(username, isAdmin);
     }
+
+    @GetMapping("/user-folder")
+    public String getUserInfo(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails){
+        model.addAttribute("folders", folderService.getFolders(userDetails.getUser()));
+        return "index  :: #fragment";
+    }
+
 }
