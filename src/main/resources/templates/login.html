@@ -16,7 +16,11 @@
 <body>
 <div id="login-form">
   <div id="login-title">Log into Select Shop</div>
-  <br>
+  <button id="login-kakao-btn"
+          th:data-kakao-client-id="${kakaoClientId}"
+          th:data-kakao-redirect-uri="${kakaoRedirectUri}">
+    카카오로 로그인하기
+  </button>
   <button id="login-id-btn" onclick="location.href='/api/user/signup'">
     회원 가입하기
   </button>
@@ -73,5 +77,12 @@
               window.location.href = host + '/api/user/login-page?error'
           });
   }
+
+  document.getElementById("login-kakao-btn").addEventListener("click", function () {
+    const kakaoClientId = this.getAttribute("data-kakao-client-id");
+    const kakaoRedirectUri = this.getAttribute("data-kakao-redirect-uri");
+    location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoClientId}&redirect_uri=${kakaoRedirectUri}&response_type=code`;
+  });
+
 </script>
 </html>
