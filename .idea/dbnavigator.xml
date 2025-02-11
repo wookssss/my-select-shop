@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -35,10 +35,7 @@ order by p.id desc;]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="131cd006-3679-4c03-8469-8b8dd03eacbb" object-ref="schemas/shop/tables/product" />
-      <object connection-id="131cd006-3679-4c03-8469-8b8dd03eacbb" object-ref="consoles/@localhost" />
-      <object connection-id="5c82b838-80a3-4126-8ba9-3047c68a533c" object-ref="schemas/shop/tables/users" />
-      <object connection-id="5c82b838-80a3-4126-8ba9-3047c68a533c" object-ref="consoles/AWS" />
+      <object connection-id="131cd006-3679-4c03-8469-8b8dd03eacbb" object-ref="schemas/shop/tables/users" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">

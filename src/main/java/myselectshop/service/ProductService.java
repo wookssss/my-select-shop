@@ -1,6 +1,5 @@
 package myselectshop.service;
 
-import jakarta.validation.constraints.Null;
 import lombok.RequiredArgsConstructor;
 import myselectshop.dto.ProductMypriceRequestDto;
 import myselectshop.dto.ProductRequestDto;
@@ -17,8 +16,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
