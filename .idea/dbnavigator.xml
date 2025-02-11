@@ -34,9 +34,7 @@ order by p.id desc;]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="131cd006-3679-4c03-8469-8b8dd03eacbb" object-ref="schemas/shop/tables/users" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="131cd006-3679-4c03-8469-8b8dd03eacbb" />
