@@ -1,0 +1,31 @@
+{
+  "name" : "project",
+  "TABLES" : [ {
+    "TABLE_NAME" : "p_category",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_menu_item",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_order",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_order_menu_item",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_payment",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_restaurant",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_review",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "p_user",
+    "IS_TEMPORARY" : "N"
+  } ],
+  "SEQUENCES" : [ ],
+  "VIEWS" : [ ],
+  "FUNCTIONS" : [ ]
+}

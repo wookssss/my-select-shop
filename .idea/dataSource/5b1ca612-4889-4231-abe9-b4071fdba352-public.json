@@ -1,0 +1,28 @@
+{
+  "name" : "public",
+  "TABLES" : [ {
+    "TABLE_NAME" : "city",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "exam",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "jwt_user",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "major",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "manager",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "student",
+    "IS_TEMPORARY" : "N"
+  }, {
+    "TABLE_NAME" : "users",
+    "IS_TEMPORARY" : "N"
+  } ],
+  "FUNCTIONS" : [ ],
+  "SEQUENCES" : [ ],
+  "VIEWS" : [ ]
+}
